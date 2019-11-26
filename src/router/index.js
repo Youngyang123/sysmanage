@@ -74,6 +74,27 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/example',
+    component: Layout,
+    name: 'Example',
+    redirect: '/example/upload',
+    meta: {title: '上传下载', icon: 'example'},
+    children: [
+      {
+        path: '/upload',
+        component: () => import('@/views/example/upload'),
+        name: 'Upload',
+        meta: { title: '上传', icon: 'example' }
+      },
+      {
+        path: '/download',
+        component: () => import('@/views/example/download'),
+        name: 'Download',
+        meta: { title: '下载', icon: 'example' }
+      }
+    ]
+  },
 
   {
     path: 'external-link',

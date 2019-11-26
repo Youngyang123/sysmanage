@@ -19,6 +19,8 @@ const cmsPort = '31001'
 
 const authPort = '8888'
 
+const imagesPort = '8888'
+
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
   /**
@@ -54,6 +56,16 @@ module.exports = {
       // cms
       [process.env.VUE_APP_BASE_API + process.env.CMS_BASE_API]: {
         target: `http://39.106.124.209:${cmsPort}`,
+        // target: `http://127.0.0.1:${cmsPort}`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API + process.env.CMS_BASE_API]: ''
+        }
+      },
+      // images
+      [process.env.VUE_APP_BASE_API + process.env.IMAGES_BASE_API]: {
+        // target: `http://39.106.124.209:${cmsPort}`,
+        target: `http://127.0.0.1:${imagesPort}`,
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API + process.env.CMS_BASE_API]: ''
