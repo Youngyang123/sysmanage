@@ -53,27 +53,27 @@ export const constantRoutes = [
       meta: { title: '主页', icon: 'dashboard' }
     }]
   },
-  {
-    path: '/cms',
-    component: Layout,
-    name: 'Cms',
-    redirect: '/cms/list',
-    meta: {title: '内容管理', icon: 'example'},
-    children: [
-      {
-        path: 'list',
-        component: () => import('@/views/cms/list'),
-        name: 'Cms-list',
-        meta: { title: '页面列表', icon: 'example' }
-      },
-      {
-        path: 'add',
-        component: () => import('@/views/cms/add'),
-        name: 'Cms-list',
-        meta: { title: '添加页面', icon: 'example' }
-      }
-    ]
-  },
+  // {
+  //   path: '/cms',
+  //   component: Layout,
+  //   name: 'Cms',
+  //   redirect: '/cms/list',
+  //   meta: {title: '内容管理', icon: 'example'},
+  //   children: [
+  //     {
+  //       path: 'list',
+  //       component: () => import('@/views/cms/list'),
+  //       name: 'Cms-list',
+  //       meta: { title: '页面列表', icon: 'example' }
+  //     },
+  //     {
+  //       path: 'add',
+  //       component: () => import('@/views/cms/add'),
+  //       name: 'Cms-list',
+  //       meta: { title: '添加页面', icon: 'example' }
+  //     }
+  //   ]
+  // },
   {
     path: '/example',
     component: Layout,

@@ -15,11 +15,7 @@ const name = defaultSettings.title || 'vue Admin Template' // page title
 // port = 9528 npm run dev OR npm run dev --port = 9528
 const port = process.env.port || process.env.npm_config_port || 9526 // dev port
 
-const cmsPort = '31001'
-
-const authPort = '8888'
-
-const imagesPort = '8888'
+const authPort = '9001'
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
@@ -45,35 +41,10 @@ module.exports = {
     proxy: {
       // change xxx-api/login => mock/login
       // detail: https://cli.vuejs.org/config/#devserver-proxy
-      // 权限验证
-      [process.env.VUE_APP_BASE_API + process.env.AUTH_BASE_API]: {
-        target: `http://39.106.124.209:${authPort}`,
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API + process.env.AUTH_BASE_API]: ''
-        }
-      },
-      // cms
-      [process.env.VUE_APP_BASE_API + process.env.CMS_BASE_API]: {
-        target: `http://39.106.124.209:${cmsPort}`,
-        // target: `http://127.0.0.1:${cmsPort}`,
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API + process.env.CMS_BASE_API]: ''
-        }
-      },
-      // images
-      [process.env.VUE_APP_BASE_API + process.env.IMAGES_BASE_API]: {
-        // target: `http://39.106.124.209:${cmsPort}`,
-        target: `http://127.0.0.1:${imagesPort}`,
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API + process.env.CMS_BASE_API]: ''
-        }
-      },
       // mock
       [process.env.VUE_APP_BASE_API]: {
-        target: `http://127.0.0.1:${port}/mock`,
+        // target: `http://127.0.0.1:${port}/mock`,
+        target: `http://39.106.124.209:${authPort}`,
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''

@@ -12,7 +12,7 @@
         :on-success="handleSuccess"
         :before-upload="beforeUpload"
         class="editor-slide-upload"
-        action="http://127.0.0.1:8888/images/posts"
+        action="http://39.106.124.209:9001/upload/posts"
         list-type="picture-card"
       >
         <!--action="https://httpbin.org/post"-->
